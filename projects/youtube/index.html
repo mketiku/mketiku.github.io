@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Watch History Explorer</title>
+    <meta name="description" content="Analyze your YouTube viewing patterns with interactive visualizations">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📺 YouTube Watch History Explorer</h1>
+            <p>Analyze your YouTube viewing patterns</p>
+        </div>
+
+        <div class="upload-section" id="uploadSection">
+            <div class="upload-box" id="uploadBox">
+                <label for="fileInput" class="upload-label">
+                    <div style="font-size: 3em; margin-bottom: 10px;">📁</div>
+                    <div>Click or drag your YouTube watch-history.json file here</div>
+                    <div style="font-size: 0.9em; margin-top: 10px; opacity: 0.8;">Get your data from <a href="https://takeout.google.com" target="_blank" style="color: white;">Google Takeout</a></div>
+                </label>
+                <input type="file" id="fileInput" accept=".json">
+            </div>
+        </div>
+
+        <div class="content" id="content">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="yearFilter">Filter by Year:</label>
+                    <select id="yearFilter" multiple style="height: 100px;">
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="channelFilter">Filter by Channel:</label>
+                    <select id="channelFilter">
+                        <option value="all">All Channels</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" data-tab="overview">📊 Overview</button>
+                <button class="tab" data-tab="activity">🕐 Activity Trends</button>
+                <button class="tab" data-tab="channels">🏆 Channel Insights</button>
+                <button class="tab" data-tab="rewatch">🔁 Rewatched Videos</button>
+                <button class="tab" data-tab="keywords">🗝️ Keyword Trends</button>
+            </div>
+
+            <div class="tab-content active" id="overview">
+                <div class="metrics" id="metrics"></div>
+                <div class="chart-container">
+                    <div class="chart-title">Videos Watched per Year</div>
+                    <canvas id="yearlyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="tab-content" id="activity">
+                <div class="chart-container">
+                    <div class="chart-title">Videos Watched by Weekday</div>
+                    <canvas id="weekdayChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Watch Pattern by Hour of Day</div>
+                    <canvas id="hourChart"></canvas>
+                </div>
+            </div>
+
+            <div class="tab-content" id="channels">
+                <div class="chart-container">
+                    <div class="chart-title">Top 30 Most Watched Channels</div>
+                    <canvas id="channelsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="tab-content" id="rewatch">
+                <div class="filter-group" style="max-width: 400px; margin-bottom: 20px;">
+                    <label for="minWatches">Minimum watch count: <span id="minWatchesValue" class="slider-value">2</span></label>
+                    <input type="range" id="minWatches" min="2" max="10" value="2">
+                </div>
+                <div class="metrics" id="rewatchMetrics"></div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Top Rewatched Videos</div>
+                    <canvas id="rewatchChart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-title">Rewatched Videos Details</div>
+                    <div id="rewatchTable"></div>
+                    <button class="download-btn" id="downloadCSV">Download Rewatched Videos CSV</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="keywords">
+                <div class="chart-container">
+                    <div class="chart-title">Top 30 Keywords in Video Titles</div>
+                    <canvas id="keywordsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: white; font-size: 0.9em;">
+        <p>Your data never leaves your browser. All analysis is done locally.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
