@@ -66,6 +66,17 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* Theme Button */
+.btn-outline-theme {
+    color: var(--theme-color);
+    border-color: var(--theme-color);
+}
+
+.btn-outline-theme:hover {
+    background-color: var(--theme-color);
+    color: #fff;
+}
+
 /* Skill Tags */
 .badge-skill {
     background-color: transparent;
@@ -126,6 +137,13 @@ h2.section-title::after {
     min-width: 60px;
     padding: 10px;
     text-align: center;
+}
+
+/* Theme Toggle Alignment */
+#modeToggle {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 /* Social Icons */
