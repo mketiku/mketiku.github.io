@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography | Michael Ketiku</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Link to styles in the root directory -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">mketiku.com</a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-4">
+                    <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/projects/photo">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center ms-3 gap-2">
+                    <div class="dropdown">
+                        <div class="color-dot bg-theme" id="colorDropdown" data-bs-toggle="dropdown" aria-expanded="false"></div>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-colors shadow">
+                            <li><button class="color-dot mb-2" style="background-color: #a080f9;" onclick="setThemeColor('#a080f9')"></button></li>
+                            <li><button class="color-dot mb-2" style="background-color: #d33682;" onclick="setThemeColor('#d33682')"></button></li>
+                            <li><button class="color-dot mb-2" style="background-color: #a07926;" onclick="setThemeColor('#a07926')"></button></li>
+                            <li><button class="color-dot mb-2" style="background-color: #2d922d;" onclick="setThemeColor('#2d922d')"></button></li>
+                            <li><button class="color-dot" style="background-color: #2f71b4;" onclick="setThemeColor('#2f71b4')"></button></li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-link text-reset p-0" id="modeToggle">
+                        <i class="fas fa-moon fs-5" id="themeIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow-1" style="padding-top: 100px;">
+        <div class="container py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h1 class="display-4 fw-bold mb-3" data-aos="fade-up">Photography</h1>
+                    <p class="lead text-secondary" data-aos="fade-up" data-aos-delay="100">
+                        Exploring the world through my lens.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mb-5" data-aos="fade-up">
+                <div class="col-lg-10">
+                    <div class="row g-4">
+                        <!-- Photo 1 -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                            <div class="photo-card rounded-3 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&q=80&w=800&h=600" alt="New York City">
+                                <div class="photo-overlay text-white">
+                                    <h5 class="mb-1">NYC Candid</h5>
+                                    <p class="small mb-0 opacity-75"><i class="fas fa-camera me-1"></i> Canon T5 • 50mm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo 2 -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="photo-card rounded-3 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80&w=800&h=600" alt="Architecture">
+                                <div class="photo-overlay text-white">
+                                    <h5 class="mb-1">Architecture</h5>
+                                    <p class="small mb-0 opacity-75"><i class="fas fa-camera me-1"></i> Canon T5 • 18-55mm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo 3 -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="photo-card rounded-3 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=800&h=600" alt="Portraits">
+                                <div class="photo-overlay text-white">
+                                    <h5 class="mb-1">Portraits</h5>
+                                    <p class="small mb-0 opacity-75"><i class="fas fa-camera me-1"></i> Canon T5 • 85mm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pb-5">
+            <div class="row g-5 mb-5">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h2 class="h3 text-theme mb-4">My Interests</h2>
+                    <p class="text-secondary fs-5">
+                        I love capturing candid moments in New York City, exploring architecture like bridges and buildings, and most of all, taking portraits of my loved ones.
+                    </p>
+                    <p class="text-secondary fs-5">
+                        I enjoy both color and black & white photography. Currently, I am diving deeper into Lightroom and general photography techniques, so I'm always open to tips and information!
+                    </p>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="card h-100 p-4 bg-body-tertiary border-0 shadow-sm">
+                        <h3 class="h4 mb-4"><i class="fas fa-camera text-theme me-2"></i>Gear</h3>
+                        <h5 class="h6 text-uppercase text-secondary mb-3">Current Setup</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex align-items-center">
+                                <i class="fas fa-circle-dot text-secondary me-3 small"></i>
+                                <strong>Canon EOS Rebel T5</strong>
+                            </li>
+                            <li class="mb-2 ms-4 text-secondary">EF 50mm f/1.8</li>
+                            <li class="mb-2 ms-4 text-secondary">EF 85mm f/1.8</li>
+                            <li class="mb-2 ms-4 text-secondary">EF-S 75-300mm f/4-5.6</li>
+                            <li class="mb-2 ms-4 text-secondary">EF-S 18-55mm f/3.5-5.6</li>
+                            <li class="mb-3 d-flex align-items-center mt-3">
+                                <i class="fas fa-circle-dot text-secondary me-3 small"></i>
+                                <strong>iPhone 15 Pro</strong>
+                            </li>
+                        </ul>
+                        <hr class="my-4 opacity-25">
+                        <h5 class="h6 text-uppercase text-secondary mb-3">Wishlist</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2 ms-4 text-secondary">External Flash</li>
+                            <li class="mb-2 ms-4 text-secondary">Tripod</li>
+                            <li class="mb-2 ms-4 text-secondary">UV & Polarizer Filters</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center text-center mt-5" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <div class="p-5 rounded-3 bg-body-tertiary border border-theme">
+                        <h3 class="mb-3">More Coming Soon!</h3>
+                        <p class="mb-4 text-secondary">I am currently curating a gallery of my best shots. In the meantime, follow my journey on Instagram.</p>
+                        <a href="https://www.instagram.com/iamoooko/?hl=en" target="_blank" class="btn btn-outline-dark btn-lg rounded-pill px-4">
+                            <i class="fab fa-instagram me-2"></i> @iamoooko
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-body text-secondary py-4 border-top mt-auto text-center">
+        <div class="container small">
+            © 2025 Michael Ketiku. Built with passion and code.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../../script.js"></script>
+</body>
+</html>

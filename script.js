@@ -12,7 +12,8 @@ new Typed('#typed-output', {
         "Pythonista", 
         "Java Developer", 
         "Product Owner", 
-        "TDD Enthusiast"
+        "TDD Enthusiast",
+        "Photographer"
     ],
     typeSpeed: 50,
     backSpeed: 30,
