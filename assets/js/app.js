@@ -6,20 +6,22 @@ AOS.init({
 });
 
 // 2. Initialize Typed.js (Typing Effect)
-new Typed('#typed-output', {
-    strings: [
-        "Senior Software Engineer", 
-        "Pythonista", 
-        "Java Developer", 
-        "Product Owner", 
-        "TDD Enthusiast",
-        "Photographer"
-    ],
-    typeSpeed: 50,
-    backSpeed: 30,
-    loop: true,
-    backDelay: 2000
-});
+if (document.getElementById('typed-output')) {
+    new Typed('#typed-output', {
+        strings: [
+            "Senior Software Engineer", 
+            "Pythonista", 
+            "Java Developer", 
+            "Product Owner", 
+            "TDD Enthusiast",
+            "Photographer"
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+        backDelay: 2000
+    });
+}
 
 // 3. Theme Toggle (Dark/Light) using Bootstrap's data-bs-theme
 const modeToggle = document.getElementById('modeToggle');
