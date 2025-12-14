@@ -22,11 +22,17 @@ uploadBox.addEventListener('drop', (e) => {
     uploadBox.classList.remove('dragover');
     const file = e.dataTransfer.files[0];
     if (file) loadFile(file);
+    else {
+        console.error("Something went wrong in upload")
+    }
 });
 
 fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     if (file) loadFile(file);
+        else {
+        console.error("Something went wrong in file")
+    }
 });
 
 function loadFile(file) {
@@ -56,7 +62,7 @@ function processData(data) {
             return {
                 title,
                 titleUrl: item.titleUrl,
-                channelName: subtitles[0]?.name || '[Unknown]',
+                channelName: subtitles[0]?.name,
                 channelUrl: subtitles[0]?.url,
                 time,
                 year: time.getFullYear(),
