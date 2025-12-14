@@ -1,0 +1,152 @@
+:root {
+    --theme-color: #a080f9; /* Default Lavender */
+    --nav-height: 76px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Smooth transitions for theme switching */
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+/* --- Custom Overrides for Bootstrap --- */
+
+/* Navbar */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--bs-body-bg-rgb), 0.95) !important;
+    border-bottom: 1px solid var(--bs-border-color);
+    transition: padding 0.3s ease;
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--theme-color) !important;
+}
+
+/* Hero Section */
+#hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--nav-height);
+}
+
+.hero-name {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+@media (min-width: 992px) {
+    .hero-name { font-size: 4.5rem; }
+}
+
+.text-theme {
+    color: var(--theme-color) !important;
+}
+
+.bg-theme {
+    background-color: var(--theme-color) !important;
+}
+
+/* Cards & Interactions */
+.card {
+    border: none;
+    border-left: 4px solid var(--theme-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Skill Tags */
+.badge-skill {
+    background-color: transparent;
+    color: var(--bs-body-color);
+    border: 1px solid var(--bs-border-color);
+    font-weight: 400;
+    padding: 8px 12px;
+    transition: all 0.3s;
+}
+
+.badge-skill:hover {
+    border-color: var(--theme-color);
+    transform: translateY(-2px);
+}
+
+/* Section Styling */
+section {
+    padding: 80px 0;
+}
+
+h2.section-title {
+    position: relative;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+h2.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--theme-color);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+/* Color Picker Styles */
+.theme-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.color-dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 2px solid var(--bs-border-color);
+    padding: 0;
+    appearance: none;
+}
+
+.color-dot:hover { transform: scale(1.1); }
+
+.dropdown-menu-colors {
+    min-width: 60px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Social Icons */
+.social-link {
+    font-size: 1.8rem;
+    color: var(--bs-secondary-color);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+    color: var(--theme-color);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer a {
+    text-decoration: none;
+    color: var(--bs-secondary-color);
+    transition: 0.3s;
+}
+footer a:hover {
+    color: var(--theme-color);
+    padding-left: 5px;
+}
