@@ -9,7 +9,7 @@ AOS.init({
 if (document.getElementById('typed-output')) {
     new Typed('#typed-output', {
         strings: [
-            "Senior Software Engineer", 
+            "Software Engineer", 
             "Pythonista", 
             "Java Developer", 
             "Product Owner", 
