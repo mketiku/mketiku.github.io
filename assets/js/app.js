@@ -5,25 +5,7 @@ AOS.init({
     offset: 50
 });
 
-// 2. Initialize Typed.js (Typing Effect)
-if (document.getElementById('typed-output')) {
-    new Typed('#typed-output', {
-        strings: [
-            "Software Engineer", 
-            "Pythonista", 
-            "Java Developer", 
-            "Product Owner", 
-            "TDD Enthusiast",
-            "Photographer"
-        ],
-        typeSpeed: 50,
-        backSpeed: 30,
-        loop: true,
-        backDelay: 2000
-    });
-}
-
-// 3. Theme Toggle (Dark/Light) using Bootstrap's data-bs-theme
+// 2. Theme Toggle (Dark/Light) using Bootstrap's data-bs-theme
 const modeToggle = document.getElementById('modeToggle');
 const themeIcon = document.getElementById('themeIcon');
 
@@ -51,7 +33,7 @@ function updateThemeIcon(theme) {
     }
 }
 
-// 4. Color Picker Logic
+// 3. Color Picker Logic
 function setThemeColor(color) {
     document.documentElement.style.setProperty('--theme-color', color);
     localStorage.setItem('themeColor', color);
@@ -63,7 +45,7 @@ if (savedColor) {
     setThemeColor(savedColor);
 }
 
-// 5. Email Obfuscation
+// 4. Email Obfuscation
 function openMailer(event) {
     event.preventDefault();
     const element = event.currentTarget;
