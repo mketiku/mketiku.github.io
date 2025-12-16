@@ -206,23 +206,48 @@ footer a:hover {
 }
 
 /* --- Hero Title Shuffle --- */
+.hero-shuffle-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: var(--bs-font-monospace);
+    font-size: clamp(0.9rem, 3vw, 1.5rem); /* Scales between 14px and 24px */
+    color: var(--bs-secondary-color);
+    border: 2px dashed currentColor;
+    border-radius: 50px; /* Modern pill shape */
+    padding: 0.5em 1.5em;
+    max-width: 100%;
+    background-color: rgba(var(--bs-secondary-bg-rgb), 0.3);
+}
+
 .hero-title-text {
     display: inline-block;
-    width: 19ch; /* Fixed width to prevent button jumping (longest title is ~17ch) */
+    width: 18ch;
+    text-align: center;
+    white-space: nowrap;
     transition: opacity 0.2s ease;
 }
 
+.hero-separator {
+    width: 1px;
+    height: 1.2em;
+    background-color: currentColor;
+    opacity: 0.4;
+}
+
 #shuffle-btn {
+    font-size: 1.2em;
+    color: inherit;
+    padding: 0;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
     transition: transform 0.4s ease, color 0.3s ease;
 }
 
 #shuffle-btn:hover {
     transform: rotate(180deg);
     color: var(--theme-color) !important;
-}
-
-.hero-dashed-border {
-    border: 1px dashed currentColor;
-    border-radius: 10px;
-    padding: 10px 20px;
 }
