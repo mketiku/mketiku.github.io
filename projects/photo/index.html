@@ -24,31 +24,32 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <div class="d-flex align-items-center ms-3 gap-2 order-lg-last">
+                <div class="dropdown">
+                    <div class="color-dot bg-theme" id="colorDropdown" data-bs-toggle="dropdown" aria-expanded="false"></div>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-colors shadow">
+                        <li><button class="color-dot mb-2" style="background-color: #a080f9;" onclick="setThemeColor('#a080f9')"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #d33682;" onclick="setThemeColor('#d33682')"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #a07926;" onclick="setThemeColor('#a07926')"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #2d922d;" onclick="setThemeColor('#2d922d')"></button></li>
+                        <li><button class="color-dot" style="background-color: #2f71b4;" onclick="setThemeColor('#2f71b4')"></button></li>
+                    </ul>
+                </div>
+
+                <button class="btn btn-link text-reset p-0" id="modeToggle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Toggle Dark Mode">
+                    <i class="fas fa-moon fs-5" id="themeIcon"></i>
+                </button>
+            </div>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
                     <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="/#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/#projects">Projects</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="/#projects">Projects</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="/#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link active" href="/projects/photo">Photos</a></li>
                     <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center ms-3 gap-2">
-                    <div class="dropdown">
-                        <div class="color-dot bg-theme" id="colorDropdown" data-bs-toggle="dropdown" aria-expanded="false"></div>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-colors shadow">
-                            <li><button class="color-dot mb-2" style="background-color: #a080f9;" onclick="setThemeColor('#a080f9')"></button></li>
-                            <li><button class="color-dot mb-2" style="background-color: #d33682;" onclick="setThemeColor('#d33682')"></button></li>
-                            <li><button class="color-dot mb-2" style="background-color: #a07926;" onclick="setThemeColor('#a07926')"></button></li>
-                            <li><button class="color-dot mb-2" style="background-color: #2d922d;" onclick="setThemeColor('#2d922d')"></button></li>
-                            <li><button class="color-dot" style="background-color: #2f71b4;" onclick="setThemeColor('#2f71b4')"></button></li>
-                        </ul>
-                    </div>
-
-                    <button class="btn btn-link text-reset p-0" id="modeToggle">
-                        <i class="fas fa-moon fs-5" id="themeIcon"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </nav>
@@ -151,7 +152,7 @@
 
     <footer class="bg-body text-secondary py-4 border-top mt-auto text-center">
         <div class="container small">
-            © 2025 Michael Ketiku.
+            © 2025 Michael Ketiku
         </div>
     </footer>
 
@@ -159,5 +160,12 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/assets/js/app.js"></script>
+    <script>
+        // Manually initialize tooltip for color dropdown to avoid data-bs-toggle conflict
+        const colorDropdown = document.getElementById('colorDropdown');
+        if (colorDropdown) {
+            new bootstrap.Tooltip(colorDropdown, { title: "Change Theme", placement: "bottom" });
+        }
+    </script>
 </body>
 </html>
