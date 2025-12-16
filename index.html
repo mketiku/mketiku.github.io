@@ -30,20 +30,15 @@
             </button>
 
             <div class="d-flex align-items-center ms-3 gap-2 order-lg-last">
-                <div class="dropdown">
-                    <div class="color-dot bg-theme" id="colorDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    </div>
+                <div class="dropdown d-flex align-items-center">
+                    <button type="button" class="color-dot bg-theme" id="colorDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Color Menu">
+                    </button>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-colors shadow">
-                        <li><button class="color-dot mb-2" style="background-color: #a080f9;"
-                                onclick="setThemeColor('#a080f9')" aria-label="Lavender Theme"></button></li>
-                        <li><button class="color-dot mb-2" style="background-color: #d33682;"
-                                onclick="setThemeColor('#d33682')" aria-label="Pink Theme"></button></li>
-                        <li><button class="color-dot mb-2" style="background-color: #a07926;"
-                                onclick="setThemeColor('#a07926')" aria-label="Gold Theme"></button></li>
-                        <li><button class="color-dot mb-2" style="background-color: #2d922d;"
-                                onclick="setThemeColor('#2d922d')" aria-label="Green Theme"></button></li>
-                        <li><button class="color-dot" style="background-color: #2f71b4;"
-                                onclick="setThemeColor('#2f71b4')" aria-label="Blue Theme"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #a080f9;" data-color="#a080f9" aria-label="Lavender Theme"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #d33682;" data-color="#d33682" aria-label="Pink Theme"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #a07926;" data-color="#a07926" aria-label="Gold Theme"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #2d922d;" data-color="#2d922d" aria-label="Green Theme"></button></li>
+                        <li><button class="color-dot" style="background-color: #2f71b4;" data-color="#2f71b4" aria-label="Blue Theme"></button></li>
                     </ul>
                 </div>
 
@@ -77,12 +72,15 @@
                                 <h1 class="hero-name mb-3">
                                     I'm <span class="text-theme">Michael Ketiku</span>
                                 </h1>
-                                <div class="h3 text-secondary mb-4 font-monospace">
-                                    <span>Software Engineer</span>
+                                <div class="h3 text-secondary mb-4 font-monospace d-inline-flex align-items-center hero-dashed-border">
+                                    <span id="hero-title" class="hero-title-text">Software Engineer</span>
+                                    <div class="vr mx-3"></div>
+                                    <button id="shuffle-btn" class="btn btn-link text-secondary text-decoration-none fs-3" aria-label="Shuffle Title">
+                                        <i class="fas fa-shuffle"></i>
+                                    </button>
                                 </div>
                                 <div class="d-flex gap-4">
-                                    <a href="#" class="social-link" onclick="openMailer(event)" data-u="mketiku"
-                                        data-d="gmail.com">
+                                    <a href="#" class="social-link js-email-link" data-u="mketiku" data-d="gmail.com" aria-label="Email Me">
                                         <i class="fas fa-envelope"></i>
                                     </a>
                                     <a href="https://www.linkedin.com/in/mketiku/" target="_blank" class="social-link">
@@ -296,7 +294,7 @@
                 <div class="col-md-6">
                     <h5 class="text-body-emphasis mb-3">Connect</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" onclick="openMailer(event)" data-u="mketiku" data-d="gmail.com">Email</a></li>
+                        <li><a href="#" class="js-email-link" data-u="mketiku" data-d="gmail.com">Email</a></li>
                         <li><a href="https://www.linkedin.com/in/mketiku/" target="_blank">LinkedIn Profile</a></li>
                     </ul>
                 </div>
@@ -311,13 +309,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="assets/js/app.js"></script>
-    <script>
-        // Manually initialize tooltip for color dropdown to avoid data-bs-toggle conflict
-        const colorDropdown = document.getElementById('colorDropdown');
-        if (colorDropdown) {
-            new bootstrap.Tooltip(colorDropdown, { title: "Change Theme", placement: "bottom" });
-        }
-    </script>
 </body>
 
 </html>

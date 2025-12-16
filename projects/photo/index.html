@@ -25,14 +25,14 @@
             </button>
 
             <div class="d-flex align-items-center ms-3 gap-2 order-lg-last">
-                <div class="dropdown">
-                    <div class="color-dot bg-theme" id="colorDropdown" data-bs-toggle="dropdown" aria-expanded="false"></div>
+                <div class="dropdown d-flex align-items-center">
+                    <button type="button" class="color-dot bg-theme" id="colorDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Color Menu"></button>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-colors shadow">
-                        <li><button class="color-dot mb-2" style="background-color: #a080f9;" onclick="setThemeColor('#a080f9')"></button></li>
-                        <li><button class="color-dot mb-2" style="background-color: #d33682;" onclick="setThemeColor('#d33682')"></button></li>
-                        <li><button class="color-dot mb-2" style="background-color: #a07926;" onclick="setThemeColor('#a07926')"></button></li>
-                        <li><button class="color-dot mb-2" style="background-color: #2d922d;" onclick="setThemeColor('#2d922d')"></button></li>
-                        <li><button class="color-dot" style="background-color: #2f71b4;" onclick="setThemeColor('#2f71b4')"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #a080f9;" data-color="#a080f9"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #d33682;" data-color="#d33682"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #a07926;" data-color="#a07926"></button></li>
+                        <li><button class="color-dot mb-2" style="background-color: #2d922d;" data-color="#2d922d"></button></li>
+                        <li><button class="color-dot" style="background-color: #2f71b4;" data-color="#2f71b4"></button></li>
                     </ul>
                 </div>
 
@@ -160,12 +160,5 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/assets/js/app.js"></script>
-    <script>
-        // Manually initialize tooltip for color dropdown to avoid data-bs-toggle conflict
-        const colorDropdown = document.getElementById('colorDropdown');
-        if (colorDropdown) {
-            new bootstrap.Tooltip(colorDropdown, { title: "Change Theme", placement: "bottom" });
-        }
-    </script>
 </body>
 </html>
