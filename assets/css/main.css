@@ -3,6 +3,11 @@
     --nav-height: 76px;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     /* Smooth transitions for theme switching */
