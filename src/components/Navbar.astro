@@ -1,0 +1,50 @@
+---
+const { pathname } = Astro.url;
+const isPhoto = pathname.startsWith('/projects/photo');
+---
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/">Home</a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="d-flex align-items-center ms-3 gap-2 order-lg-last">
+            <div class="dropdown d-flex align-items-center">
+                <button type="button" class="color-dot bg-theme" id="colorDropdown" data-bs-toggle="dropdown"
+                    aria-expanded="false" aria-label="Theme Color Menu">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-colors shadow">
+                    <li><button class="color-dot mb-2" style="background-color: #a080f9;" data-color="#a080f9"
+                            aria-label="Lavender Theme"></button></li>
+                    <li><button class="color-dot mb-2" style="background-color: #d33682;" data-color="#d33682"
+                            aria-label="Pink Theme"></button></li>
+                    <li><button class="color-dot mb-2" style="background-color: #a07926;" data-color="#a07926"
+                            aria-label="Gold Theme"></button></li>
+                    <li><button class="color-dot mb-2" style="background-color: #2d922d;" data-color="#2d922d"
+                            aria-label="Green Theme"></button></li>
+                    <li><button class="color-dot" style="background-color: #2f71b4;" data-color="#2f71b4"
+                            aria-label="Blue Theme"></button></li>
+                </ul>
+            </div>
+
+            <button class="btn btn-link text-reset p-0" id="modeToggle" aria-label="Toggle Light Mode"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Toggle Dark Mode">
+                <i class="fas fa-moon fs-5" id="themeIcon"></i>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto me-4">
+                <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#education">Education</a></li>
+                <li class="nav-item"><a class={`nav-link${isPhoto ? ' active' : ''}`} href="/projects/photo">Photos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

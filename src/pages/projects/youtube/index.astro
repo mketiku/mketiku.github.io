@@ -1,3 +1,7 @@
+---
+// Standalone page — no main site layout, uses its own CSS
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +10,7 @@
     <title>YouTube Watch History Explorer</title>
     <meta name="description" content="Analyze your YouTube viewing patterns with interactive visualizations">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/projects/youtube/styles.css">
 </head>
 <body>
     <div class="container">
@@ -30,8 +34,7 @@
             <div class="filters">
                 <div class="filter-group">
                     <label for="yearFilter">Filter by Year:</label>
-                    <select id="yearFilter" multiple style="height: 100px;">
-                    </select>
+                    <select id="yearFilter" multiple style="height: 100px;"></select>
                 </div>
                 <div class="filter-group">
                     <label for="channelFilter">Filter by Channel:</label>
@@ -81,12 +84,10 @@
                     <input type="range" id="minWatches" min="2" max="10" value="2">
                 </div>
                 <div class="metrics" id="rewatchMetrics"></div>
-
                 <div class="chart-container">
                     <div class="chart-title">Top Rewatched Videos</div>
                     <canvas id="rewatchChart"></canvas>
                 </div>
-                
                 <div class="chart-container">
                     <div class="chart-title">Rewatched Videos Details</div>
                     <div id="rewatchTable"></div>
@@ -107,12 +108,12 @@
         <p>Your data never leaves your browser. All analysis is done locally.</p>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="/projects/youtube/app.js" is:inline></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QY66C7CZBQ"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-QY66C7CZBQ');
     </script>

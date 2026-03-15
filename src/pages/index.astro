@@ -1,72 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Ketiku | Senior Software Engineer</title>
-
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪪</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="assets/css/main.css">
-</head>
-
-<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
-
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Home</a>
-
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="d-flex align-items-center ms-3 gap-2 order-lg-last">
-                <div class="dropdown d-flex align-items-center">
-                    <button type="button" class="color-dot bg-theme" id="colorDropdown" data-bs-toggle="dropdown"
-                        aria-expanded="false" aria-label="Theme Color Menu">
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-colors shadow">
-                        <li><button class="color-dot mb-2" style="background-color: #a080f9;" data-color="#a080f9"
-                                aria-label="Lavender Theme"></button></li>
-                        <li><button class="color-dot mb-2" style="background-color: #d33682;" data-color="#d33682"
-                                aria-label="Pink Theme"></button></li>
-                        <li><button class="color-dot mb-2" style="background-color: #a07926;" data-color="#a07926"
-                                aria-label="Gold Theme"></button></li>
-                        <li><button class="color-dot mb-2" style="background-color: #2d922d;" data-color="#2d922d"
-                                aria-label="Green Theme"></button></li>
-                        <li><button class="color-dot" style="background-color: #2f71b4;" data-color="#2f71b4"
-                                aria-label="Blue Theme"></button></li>
-                    </ul>
-                </div>
-
-                <button class="btn btn-link text-reset p-0" id="modeToggle" aria-label="Toggle Light Mode"
-                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Toggle Dark Mode">
-                    <i class="fas fa-moon fs-5" id="themeIcon"></i>
-                </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto me-4">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/projects/photo">Photos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<BaseLayout title="Michael Ketiku | Senior Software Engineer" scrollSpy={true}>
     <section id="hero" class="container d-flex align-items-center min-vh-100">
         <div class="row justify-content-center">
             <div class="col-lg-10">
@@ -91,14 +27,17 @@
                                         aria-label="Email Me">
                                         <i class="fas fa-envelope"></i>
                                     </a>
-                                    <a href="https://www.linkedin.com/in/mketiku/" target="_blank" class="social-link">
+                                    <a href="https://www.linkedin.com/in/mketiku/" target="_blank" class="social-link" aria-label="LinkedIn Profile">
                                         <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://github.com/mketiku" target="_blank" class="social-link" aria-label="GitHub Profile">
+                                        <i class="fab fa-github"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-5 position-relative">
-                            <img src="assets/img/profile.jpeg" class="img-fluid h-100 w-100 object-fit-cover"
+                            <img src="/img/profile.jpeg" class="img-fluid h-100 w-100 object-fit-cover"
                                 alt="Michael Ketiku" style="min-height: 300px;">
                         </div>
                     </div>
@@ -144,7 +83,7 @@
                         <span class="badge rounded-pill badge-skill">Kafka</span>
                         <span class="badge rounded-pill badge-skill">Redis</span>
                         <span class="badge rounded-pill badge-skill">Jenkins</span>
-                        <span class="badge rounded-pill badge-skill">AI/LLMs(Chatgpt, Gemini etc)</span>
+                        <span class="badge rounded-pill badge-skill">AI/LLMs</span>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
@@ -153,7 +92,7 @@
                         <span class="badge rounded-pill badge-skill">Agile</span>
                         <span class="badge rounded-pill badge-skill">Scrum</span>
                         <span class="badge rounded-pill badge-skill">Microservices</span>
-                        <span class="badge rounded-pill badge-skill">Test Driven Development(TDD)</span>
+                        <span class="badge rounded-pill badge-skill">Test-Driven Development (TDD)</span>
                     </div>
                 </div>
             </div>
@@ -203,31 +142,33 @@
         </div>
     </section>
 
-    <!-- <section id="projects" class="bg-body-tertiary">
+    <section id="projects" class="bg-body-tertiary">
         <div class="container">
             <h2 class="section-title" data-aos="fade-right">Projects</h2>
             <div class="row g-4">
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card p-4 h-100">
-                        <h3 class="h4 fw-bold mb-3">Youtube Analysis</h3>
+                        <h3 class="h4 fw-bold mb-3">YouTube History Analyzer</h3>
                         <p class="text-secondary">Analyze your YouTube viewing patterns with interactive visualizations.
                             Discover your most-watched channels, viewing habits, and rewatched videos. All in your
-                            browser..</p>
-                        <a href="projects/youtube" class="text-theme text-decoration-none fw-bold mt-auto">View Project
+                            browser — your data never leaves your device.</p>
+                        <a href="/projects/youtube" class="text-theme text-decoration-none fw-bold mt-auto">View Project
                             <i class="fas fa-arrow-right ms-1"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card p-4 h-100">
-                        <h3 class="h4 fw-bold mb-3">Auth Project</h3>
-                        <p class="text-secondary">Python-based analytics framework with Django REST API, implementing
-                            secure authentication patterns and automated reporting capabilities for enterprise-scale
-                            data operations.</p>
+                        <h3 class="h4 fw-bold mb-3">Parrit</h3>
+                        <p class="text-secondary">A pair programming tool for organizing and managing team pairing
+                            assignments. Helps engineering teams coordinate who is working with whom at a glance.</p>
+                        <a href="https://parrit.org" target="_blank" class="text-theme text-decoration-none fw-bold mt-auto">
+                            Visit Parrit <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <section id="education" class="container">
         <h2 class="section-title" data-aos="fade-right">Education & Certifications</h2>
@@ -248,16 +189,11 @@
             <div class="col-md-6 mb-5" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="h5 text-theme mb-4">Certifications</h3>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> Project Management Professional
-                        (Expected Jan 2026)</li>
-                    <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> Advanced Certified Scrum Product Owner
-                    </li>
-                    <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> Product Management Certification
-                        (Product School)
-                    </li>
+                    <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> Project Management Professional (PMP)</li>
+                    <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> Advanced Certified Scrum Product Owner</li>
+                    <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> Product Management Certification (Product School)</li>
                     <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> AWS Certified Cloud Practitioner</li>
-                    <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> Certified Scrum Product Owner (CSPO)
-                    </li>
+                    <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> Certified Scrum Product Owner (CSPO)</li>
                     <li class="mb-2"><i class="fas fa-check text-theme me-2"></i> Certified ScrumMaster (CSM)</li>
                 </ul>
             </div>
@@ -280,53 +216,21 @@
             <div class="row justify-content-center mt-4">
                 <div class="col-lg-8">
                     <p class="fs-4 text-secondary" data-aos="fade-up" data-aos-delay="100">
-                        I'm always open to discussing new opportunities(particularly volunteering), interesting
-                        projects, or just having a chat
-                        about technology.
+                        I'm always open to discussing new opportunities (particularly volunteering), interesting
+                        projects, or just having a chat about technology.
                     </p>
+                    <div class="d-flex justify-content-center gap-3 mt-4" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#" class="btn btn-lg px-4 js-email-link" data-u="mketiku" data-d="gmail.com"
+                            style="background-color: var(--theme-color); color: #fff; border: none;">
+                            Say Hello <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mketiku/" target="_blank"
+                            class="btn btn-lg px-4 btn-outline-secondary">
+                            LinkedIn <i class="fab fa-linkedin ms-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="bg-body text-secondary py-5 border-top">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-6">
-                    <h5 class="text-body-emphasis mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <!-- <li><a href="#projects">Projects</a></li> -->
-                        <li><a href="#education">Education</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h5 class="text-body-emphasis mb-3">Connect</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="js-email-link" data-u="mketiku" data-d="gmail.com">Email</a></li>
-                        <li><a href="https://www.linkedin.com/in/mketiku/" target="_blank">LinkedIn Profile</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="text-center mt-5 pt-3 border-top small">
-                © 2025 Michael Ketiku
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script src="assets/js/app.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QY66C7CZBQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QY66C7CZBQ');
-    </script>
-</body>
-
-</html>
+</BaseLayout>

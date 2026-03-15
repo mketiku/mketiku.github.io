@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Blog | Michael Ketiku" description="Thoughts on software engineering, Python, and more.">
+    <main class="flex-grow-1" style="padding-top: 100px;">
+        <div class="container py-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold mb-2" data-aos="fade-up">Blog</h1>
+                    <p class="text-secondary" data-aos="fade-up" data-aos-delay="100">
+                        Thoughts on software engineering, photography, and whatever else is on my mind.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    {posts.length === 0 ? (
+                        <p class="text-secondary">No posts yet. Check back soon.</p>
+                    ) : (
+                        posts.map((post) => (
+                            <div class="card p-4 mb-4" data-aos="fade-up">
+                                <div class="text-muted small mb-2">
+                                    {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                </div>
+                                <h2 class="h4 fw-bold mb-2">
+                                    <a href={`/blog/${post.slug}`} class="text-body text-decoration-none">
+                                        {post.data.title}
+                                    </a>
+                                </h2>
+                                {post.data.description && (
+                                    <p class="text-secondary mb-3">{post.data.description}</p>
+                                )}
+                                <a href={`/blog/${post.slug}`} class="text-theme text-decoration-none fw-bold">
+                                    Read more <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        ))
+                    )}
+                </div>
+            </div>
+        </div>
+    </main>
+</BaseLayout>
