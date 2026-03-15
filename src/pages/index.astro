@@ -1,5 +1,7 @@
----
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout title="Michael Ketiku | Senior Software Engineer" scrollSpy={true}>
@@ -37,8 +39,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             </div>
                         </div>
                         <div class="col-md-5 position-relative">
-                            <img src="/img/profile.jpeg" class="img-fluid h-100 w-100 object-fit-cover"
-                                alt="Michael Ketiku" style="min-height: 300px;">
+                            <Image 
+                                src={profileImage} 
+                                class="img-fluid h-100 w-100 object-fit-cover"
+                                alt="Michael Ketiku" 
+                                style="min-height: 300px;"
+                                loading="eager"
+                            />
                         </div>
                     </div>
                 </div>
@@ -146,26 +153,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="container">
             <h2 class="section-title" data-aos="fade-right">Projects</h2>
             <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card p-4 h-100">
-                        <h3 class="h4 fw-bold mb-3">YouTube History Analyzer</h3>
-                        <p class="text-secondary">Analyze your YouTube viewing patterns with interactive visualizations.
-                            Discover your most-watched channels, viewing habits, and rewatched videos. All in your
-                            browser — your data never leaves your device.</p>
-                        <a href="/projects/youtube" class="text-theme text-decoration-none fw-bold mt-auto">View Project
-                            <i class="fas fa-arrow-right ms-1"></i></a>
+                {projects.map((project, index) => (
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay={(index + 1) * 100}>
+                        <div class="card p-4 h-100">
+                            <h3 class="h4 fw-bold mb-3">{project.data.title}</h3>
+                            <p class="text-secondary">{project.data.description}</p>
+                            <a 
+                                href={project.data.link} 
+                                target={project.data.link.startsWith('http') ? "_blank" : "_self"}
+                                class="text-theme text-decoration-none fw-bold mt-auto"
+                            >
+                                {project.data.link.startsWith('http') ? 'Visit Project' : 'View Project'}
+                                <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card p-4 h-100">
-                        <h3 class="h4 fw-bold mb-3">Parrit</h3>
-                        <p class="text-secondary">A pair programming tool for organizing and managing team pairing
-                            assignments. Helps engineering teams coordinate who is working with whom at a glance.</p>
-                        <a href="https://parrit.org" target="_blank" class="text-theme text-decoration-none fw-bold mt-auto">
-                            Visit Parrit <i class="fas fa-arrow-right ms-1"></i>
-                        </a>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     </section>
