@@ -66,7 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
         new bootstrap.Tooltip(colorDropdown, { title: "Change Theme", placement: "bottom" });
     }
 
-    // 6. Hero Title Shuffle
+    // 6. Scroll Spy — active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="/#"], .navbar-nav .nav-link[href^="#"]');
+
+    if (sections.length && navLinks.length) {
+        const onScroll = () => {
+            let current = '';
+            sections.forEach(section => {
+                if (window.scrollY >= section.offsetTop - 120) current = section.id;
+            });
+            navLinks.forEach(link => {
+                const hash = link.getAttribute('href').replace(/^\//, '');
+                link.classList.toggle('active', hash === `#${current}`);
+            });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    }
+
+    // 7. Hero Title Shuffle
     const heroTitle = document.getElementById('hero-title');
     const shuffleBtn = document.getElementById('shuffle-btn');
     const titles = [
