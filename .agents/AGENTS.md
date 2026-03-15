@@ -31,3 +31,4 @@ All commits must follow the [Conventional Commits](https://www.conventionalcommi
 - `src/layouts/`: Global page layouts.
 - `public/`: Static assets (images, etc.).
 - `.github/workflows/`: CI/CD pipelines.
+- `.editorconfig`: Editor configuration for consistent coding styles.
