@@ -47,14 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Email Obfuscation
-    document.querySelectorAll('.js-email-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const { u, d } = link.currentTarget.dataset;
-            window.location.href = `mailto:${u}@${d}`;
-        });
-    });
+
 
     // 5. Tooltips
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
